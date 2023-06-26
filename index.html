@@ -116,7 +116,7 @@ function result(){
     console.log(parseFloat(document.getElementById('valor').value.substr(3))
     )
     console.log(parseFloat(data[document.getElementById('select').value][document.getElementById('select2').value]))
-  var valor2=parseFloat(document.getElementById('valor').value.substr(3).replaceAll(",",'.'))/parseFloat(data[document.getElementById('select').value][document.getElementById('select2').value]);
+  var valor2=parseFloat(document.getElementById('valor').value.substr(3).replaceAll(".",'').replaceAll(",",'.'))/parseFloat(data[document.getElementById('select').value][document.getElementById('select2').value]);
    console.log(valor2)
 
   document.getElementById("resultado2").innerHTML=`O valor convertido em ${(data[document.getElementById('select').value].name).split('/')[0]} é: ` + valor2.toFixed(2)
