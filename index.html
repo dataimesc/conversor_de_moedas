@@ -39,18 +39,19 @@
   <h2>Conversor de moeda:</h2>
   <label for="valor"style="font-size: smaller;">Valor em R$:</label><br>
   <input type="text" id="valor" oninput="formatCurrency(this)" placeholder="R$ 0.00" style="width:15%;"><br>
-  <label for="select"style="font-size: smaller;">Moeda:</label>
+  <label for="select" style="font-size: smaller;">Moeda:</label>
   <select onchange="result()" id="select" class="form-select"  aria-label="Default select example" style="width:15%;">
     <option value="USDBRL">Dólar</option>
     <option value="EURBRL" >Euro</option>
     <option value="RUBBRL">Rublo</option>
     <option value="BTCBRL">Bitcoin</option>
   </select>
-  <label for="select2"style="font-size: smaller;">Valor:</label>
+  <label for="select2" style="font-size: smaller;">Valor:</label>
   <select id="select2" class="form-select" aria-label="Default select example" style="width:15%;">
     <option value="ask">Compra</option>
     <option value="bid" selected>Venda</option>
   </select>
+  <br>
   </div>
   
   <div id="resultado">
