@@ -40,9 +40,9 @@
   <label for="valor"style="font-size: smaller;">Valor em R$:</label><br>
   <input type="text" id="valor" oninput="formatCurrency(this)" placeholder="R$ 0.00" style="width:15%;"><br>
   <label for="select"style="font-size: smaller;">Moeda:</label>
-  <select id="select" class="form-select" aria-label="Default select example" style="width:15%;">
+  <select id="select" class="form-select" onchange="result()" aria-label="Default select example" style="width:15%;">
     <option value="USDBRL">Dólar</option>
-    <option value="EURBRL" selected>Euro</option>
+    <option value="EURBRL" >Euro</option>
     <option value="RUBBRL">Rublo</option>
     <option value="BTCBRL">Bitcoin</option>
   </select>
@@ -52,7 +52,7 @@
     <option value="bid" selected>Venda</option>
   </select>
 <br>
-   <button  class="btn btn-primary" onclick=result() id="firstbutton">Converter</button>
+
   </div>
   
   <div id="resultado">
