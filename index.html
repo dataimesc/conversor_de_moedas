@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+ <div class="topnav">
+  <a class="active" href="https://dataimesc.imesc.ma.gov.br/">DataImesc</a>
+  <a href="https://dataimesc.github.io/calculadora/">Calculadora de Inflação</a>
+  <a href="https://dataimesc.github.io/conversor_de_moedas/">Conversor de Moedas</a>
+
+</div>
 <head>
  
   </head>
@@ -34,9 +40,9 @@
   <label for="valor"style="font-size: smaller;">Valor em R$:</label><br>
   <input type="text" id="valor" oninput="formatCurrency(this)" placeholder="R$ 0.00" style="width:15%;"><br>
   <label for="select"style="font-size: smaller;">Moeda:</label>
-  <select id="select" class="form-select" aria-label="Default select example" style="width:15%;">
+  <select id="select" onchange="result()" class="form-select" aria-label="Default select example" style="width:15%;">
     <option value="USDBRL">Dólar</option>
-    <option value="EURBRL" selected>Euro</option>
+    <option value="EURBRL" >Euro</option>
     <option value="RUBBRL">Rublo</option>
     <option value="BTCBRL">Bitcoin</option>
   </select>
@@ -46,8 +52,8 @@
     <option value="bid" selected>Venda</option>
   </select>
 <br>
-   <button  class="btn btn-primary" onclick=result() id="firstbutton">Converter</button>
-  </div>
+<br>
+</div>
   
   <div id="resultado">
     <h4>Resultado:</h4>
@@ -121,13 +127,41 @@ function result(){
 
   document.getElementById("resultado2").innerHTML=`O valor convertido em ${(data[document.getElementById('select').value].name).split('/')[0]} é: ` + valor2.toFixed(2)
 });
-
-  }
-;
-  </script>
+};
+</script>
 </body>
 </html>
 <style>
+ .topnav {
+  background-color: #333;
+  overflow: hidden;
+  position:relative:
+  top:-5px;
+  left:-5px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
   table {
     border-collapse: collapse;
     width: 100%;
