@@ -41,8 +41,7 @@
   <input type="text" id="valor" oninput="formatCurrency(this)" placeholder="R$ 0.00" style="width:15%;"><br>
   <label for="select"style="font-size: smaller;">Moeda:</label>
   <select id="select" onchange="result()" class="form-select" aria-label="Default select example" style="width:15%;">
-   <option value="USDBRL" selected>...</option>
-    <option value="USDBRL">Dólar</option>
+    <option value="USDBRL" selected>Dólar</option>
     <option value="EURBRL" >Euro</option>
     <option value="RUBBRL">Rublo</option>
     <option value="BTCBRL">Bitcoin</option>
@@ -68,6 +67,7 @@
         value = Number(value) / 100;
         value = value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
         input.value = value;
+        result();
     };
     fetch('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL,RUB-BRL')
   .then(response => response.json())
@@ -109,7 +109,7 @@
 
         var createDateCell= row.insertCell(9);
         createDateCell.innerHTML = json[key].create_date.toLocaleString([], {hour12: false,}).split(" ")[1];
-
+      
         
         
   }
