@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <html>
  <div class="topnav">
   <a class="active" href="https://dataimesc.imesc.ma.gov.br/">DataImesc</a>
@@ -56,8 +57,9 @@
 <br>
 </div>
   
-  <div id="resultado">
+
     <h4>Resultado:</h4>
+     <div id="resultado">
     <div id="resultado2" style="font-family: 'Orbitron"></div>
     
   </div>
@@ -126,8 +128,10 @@ function result(){
     console.log(parseFloat(data[document.getElementById('select').value][document.getElementById('select2').value]))
   var valor2=parseFloat(document.getElementById('valor').value.substr(3).replaceAll(".",'').replaceAll(",",'.'))/parseFloat(data[document.getElementById('select').value][document.getElementById('select2').value]);
    console.log(valor2)
-
-  document.getElementById("resultado2").innerHTML=`O valor convertido em ${(data[document.getElementById('select').value].name).split('/')[0]} é: ` + (valor2.toFixed(2).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
+  simb={"USDBRL":"fa fa-dollar","EURBRL":"fa fa-euro","RUBBRL":"fa fa-rub","BTCBRL":"fa fa-bitcoin"}
+   + 
+   document.getElementById("resultado").create( `<i class=${simb[document.getElementById('select').value]}></i>`)
+  document.getElementById("resultado2").innerHTML=(valor2.toFixed(2).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
 });
 };
 </script>
