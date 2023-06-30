@@ -129,7 +129,7 @@ function result(){
   var valor2=parseFloat(document.getElementById('valor').value.substr(3).replaceAll(".",'').replaceAll(",",'.'))/parseFloat(data[document.getElementById('select').value][document.getElementById('select2').value]);
    console.log(valor2)
   var simb={"USDBRL":"fa fa-dollar","EURBRL":"fa fa-euro","RUBBRL":"fa fa-rub","BTCBRL":"fa fa-bitcoin"}
-  document.getElementById("resultado").class= `${simb[document.getElementById('select').value]}`
+  document.document.querySelector("resultado").className= `${simb[document.getElementById('select').value]}`
   document.getElementById("resultado2").innerHTML=valor2.toFixed(2);
 });
 };
